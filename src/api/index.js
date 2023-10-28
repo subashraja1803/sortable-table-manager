@@ -6,7 +6,7 @@ const getDataFromAPI = ( url ) => {
     return axios(url);
   }
   catch(error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
