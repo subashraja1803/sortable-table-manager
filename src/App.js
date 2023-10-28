@@ -1,7 +1,6 @@
 import './App.css';
 import  { React } from 'react';
 import _get from 'lodash/get';
-// import { store } from './store';
 import { connect } from "react-redux";
 import SortTable from './Components/SortTable';
 import InputBox from './Components/InputBox';
@@ -11,26 +10,15 @@ import * as sortTableActions from './actions';
 function App({
   selected, filteredData, columns, setURL, setColumns, setFilteredData, setSortOption, setSortType,
 }) {
-  console.log(setSortOption);
-  // https://jsonplaceholder.typicode.com/users
-
-  // const selected = useSelector((store) => store.selected);
-  // const filteredData = useSelector((store) => store.filteredData);
-  // const columns = useSelector((store) => store.columns);
-  console.log(selected);
   const handleURLChange = (e) => {
     setURL(e.target.value);
   }
 
   const handleFetch = (e) => {
-    // console.log(selected.url);
     getAPIData(selected.url).then(({ data }) => {
-      console.log(data);
       let col = extractColumns(data)
-      console.log(col);
       setFilteredData(mapData(col, data));
       setColumns(col);
-      console.log(col[0].identifier)
       setSortOption(col[0].identifier);
     });
   }
@@ -49,18 +37,25 @@ function App({
 
   return (
     <div className="App">
+      <div className="Title">
+        <h2>Sortable Table Manager</h2>
+        <p>A fundamental, yet highly functional, sortable table component using ReactJS. This dynamic table retrieves data from an API source and presents both string and numeric information in a structured, 2-dimensional table format. Additionally, it empowers users to intuitively sort the data, enhancing usability and data organization.</p>
+        <p>Click on the column header to sort using column and click on the arrows to change the sort order.</p>
+      </div>
       <InputBox 
-      handleURLChange = {handleURLChange} 
-      handleFetch = {handleFetch}
+        handleURLChange={handleURLChange} 
+        handleFetch={handleFetch}
       />
-      <SortTable 
-        columns={columns} 
-        rows={filteredData} 
-        sortOption={selected.sortOption} 
-        sortType={selected.sortType} 
-        handleSortTypeChange={handleSortTypeChange}
-        handleSortOptionChange={handleSortOptionChange}
-      />
+      {columns.length !== 0 && (
+        <SortTable 
+          columns={columns} 
+          rows={filteredData}
+          sortOption={selected.sortOption} 
+          sortType={selected.sortType} 
+          handleSortTypeChange={handleSortTypeChange}
+          handleSortOptionChange={handleSortOptionChange}
+        />)
+      }
       <div className="SampleLinks">
         <h3>Sample Links</h3>
         <span>https://jsonplaceholder.typicode.com/posts - 100 posts</span>

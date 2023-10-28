@@ -14,8 +14,28 @@
   text-align: center;
 }
 
+.Title {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .UsersTable, th, tr, td {
   border: 0.1rem solid rgb(0, 0, 0, 60%) ;
+}
+
+.InputBox {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1rem solid rgb(0, 0, 0, 60%);
+}
+
+.SortTable {
+  max-height: 70rem;
+  overflow: auto;
+  border: 0.1rem solid rgb(0, 0, 0, 60%);;
 }
 
 .tableHeader {

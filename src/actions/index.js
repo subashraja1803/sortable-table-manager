@@ -15,7 +15,6 @@ export const setSortType = (payload) => {
 }
 
 export const setSortOption = (payload) => {
-  console.log({ sorrrt: payload })
   return {
     type: SORT_TABLE_ACTIONS.SET_SORT_OPTION,
     payload,
