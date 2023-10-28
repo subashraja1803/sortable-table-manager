@@ -61,12 +61,19 @@ function App({
         handleSortTypeChange={handleSortTypeChange}
         handleSortOptionChange={handleSortOptionChange}
       />
+      <div className="SampleLinks">
+        <h3>Sample Links</h3>
+        <span>https://jsonplaceholder.typicode.com/posts - 100 posts</span>
+        <span>https://jsonplaceholder.typicode.com/comments - 500 comments</span>
+        <span>https://jsonplaceholder.typicode.com/albums - 100 albums</span>
+        <span>https://jsonplaceholder.typicode.com/todos - 200 todos</span>
+        <span>https://jsonplaceholder.typicode.com/users - 10 posts</span>
+      </div>
     </div>
   );
 }
 
 const mapStateToProps = ({ sortTableStore }) => ({
-
   selected: _get(sortTableStore, 'selected'),
   filteredData: _get(sortTableStore, 'filteredData'),
   columns: _get(sortTableStore, 'columns'),

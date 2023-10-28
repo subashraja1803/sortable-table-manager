@@ -8,6 +8,9 @@
   padding: 1rem;
   background-color: white;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   text-align: center;
 }
 
@@ -23,4 +26,9 @@
 
 .TableHeaderText {
   cursor: pointer;
+}
+
+.SampleLinks {
+  display: flex;
+  flex-direction: column;
 }
