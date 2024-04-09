@@ -1,3 +1,6 @@
+# Sortable Table Manager
+A versatile and efficient sortable table component built using React JS. This component fetches data from an external API and displays it in a user-friendly two-dimensional table format. Users can easily sort the data based on string and number attributes, enhancing data accessibility and usability. Developed with modern React JS techniques and best practices, this component ensures seamless integration, optimal performance, and an intuitive user experience.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
